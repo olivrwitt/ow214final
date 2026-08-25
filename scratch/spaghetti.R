@@ -152,7 +152,7 @@ for(i in 1:nrow(prm_window)){
 
 
 
-full_data <- bind_rows(bis_window_1, bis_window_2, bis_window_3, prm_window)
+merged_dataset <- bind_rows(bis_window_1, bis_window_2, bis_window_3, prm_window)
 
 ggplot(
   
