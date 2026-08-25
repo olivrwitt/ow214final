@@ -1,4 +1,4 @@
-# Water quality changes in Puerto Rico after Hurricane Hugo
+# Water quality changes in Puerto Rico before and after Hurricane Hugo
 
 ## Purpose/Background
 This repository contains data on nutrient concentrations in several streams in the Luquillo mountain region in Puerto Rico from 1986-1994.  The purpose is to analyze changes over time in these  nutrient concentrations after the 1986.
