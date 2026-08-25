@@ -151,9 +151,25 @@ for(i in 1:nrow(prm_window)){
 }
 
 
-
 merged_data <- bind_rows(bis_window_1, bis_window_2, bis_window_3, prm_window)
+reshaped <- merged_data |> 
+  pivot_longer(
+    cols = c(`NH4-N`, `NO3-N`, K, Ca, Mg),
+    names_to = "nutrient", 
+    values_to = "concentration"
+    )
+
 
 ggplot(
-  
-)
+  data = reshaped,
+  mapping = aes(
+    x = window_start,
+    y = concentration,
+    color = Site
+  )
+) + geom_line()+
+  facet_wrap(
+    vars(nutrient), 
+    scales = "free", 
+    ncol = 1
+  )
