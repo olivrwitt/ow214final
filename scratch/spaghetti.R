@@ -42,7 +42,7 @@ ggplot(
   mapping = aes(
     x = window_start,
     y = concentration,
-    color = Site
+    linetype = Site
   )
 ) + geom_line()+
   facet_wrap(
