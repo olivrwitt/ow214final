@@ -29,7 +29,7 @@ cleaned_prm <- prm |>
 
 
 
-# new tables for 9 week moving averages for each site
+# new EMPTY tables for 9 week moving averages for each site
 bis_window_1 <- tibble (
   window_start = seq(ymd("1986-05-20"), ymd("1994-12-30"), by = "9 weeks"),
   Site = "BQ1",
@@ -68,7 +68,7 @@ prm_window <- tibble (
 )
 
 
-## create a moving window average for each dataset
+## create a moving window average for each dataset (populate table)
 # Bis 1:
 for(i in 1:nrow(bis_window_1)){
   w1 <- bis_window_1$window_start[i]
@@ -150,7 +150,7 @@ for(i in 1:nrow(prm_window)){
   
 }
 
-
+# merge datasets
 merged_data <- bind_rows(bis_window_1, bis_window_2, bis_window_3, prm_window)
 reshaped <- merged_data |> 
   pivot_longer(
@@ -160,6 +160,7 @@ reshaped <- merged_data |>
     )
 
 
+#plot
 ggplot(
   data = reshaped,
   mapping = aes(
