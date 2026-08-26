@@ -15,16 +15,16 @@ prm <- read_csv("data/prm.csv")
 #select relevant columns and label by site
 cleaned_bis_1 <- bisley1 |> 
   select(`NH4-N`, `NO3-N`, Sample_Date, K, Ca, Mg) |> 
-  mutate(Site = "bis1")
+  mutate(Site = "BQ1")
 cleaned_bis_2 <- bisley2 |> 
   select(`NH4-N`, `NO3-N`, Sample_Date, K, Ca, Mg) |> 
-  mutate(Site = "bis2")
+  mutate(Site = "BQ2")
 cleaned_bis_3 <- bisley3 |> 
   select(`NH4-N`, `NO3-N`, Sample_Date, K, Ca, Mg) |> 
-  mutate(Site = "bis3")
+  mutate(Site = "BQ3")
 cleaned_prm <- prm |> 
   select(`NH4-N`, `NO3-N`, Sample_Date, K, Ca, Mg) |> 
-  mutate(Site = "prm")
+  mutate(Site = "PRM")
 
 
 
@@ -32,7 +32,7 @@ cleaned_prm <- prm |>
 # new tables for 9 week moving averages for each site
 bis_window_1 <- tibble (
   window_start = seq(ymd("1986-05-20"), ymd("1994-12-30"), by = "9 weeks"),
-  Site = "bis1",
+  Site = "BQ1",
   `NH4-N` = NA,
   `NO3-N` = NA,
   K = NA,
@@ -41,7 +41,7 @@ bis_window_1 <- tibble (
 )
 bis_window_2 <- tibble (
   window_start = seq(ymd("1986-05-20"), ymd("1994-12-30"), by = "9 weeks"),
-  Site = "bis2",
+  Site = "BQ2",
   `NH4-N` = NA,
   `NO3-N` = NA,
   K = NA,
@@ -50,7 +50,7 @@ bis_window_2 <- tibble (
 )
 bis_window_3 <- tibble (
   window_start = seq(ymd("1986-05-20"), ymd("1994-12-30"), by = "9 weeks"),
-  Site = "bis3",
+  Site = "BQ3",
   `NH4-N` = NA,
   `NO3-N` = NA,
   K = NA,
@@ -59,7 +59,7 @@ bis_window_3 <- tibble (
 )
 prm_window <- tibble (
   window_start = seq(ymd("1986-05-20"), ymd("1994-12-30"), by = "9 weeks"),
-  Site = "prm",
+  Site = "PRM",
   `NH4-N` = NA,
   `NO3-N` = NA,
   K = NA,
@@ -159,7 +159,6 @@ reshaped <- merged_data |>
     values_to = "concentration"
     )
 
-mergeddd <- bind_rows(bis_window_1, bis_window_2, bis_window_3, prm_window)
 
 ggplot(
   data = reshaped,
