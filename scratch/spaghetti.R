@@ -159,6 +159,7 @@ reshaped <- complete |>
     values_to = "concentration"
     )
 
+mergeddd <- bind_rows(bis_window_1, bis_window_2, bis_window_3, prm_window)
 
 ggplot(
   data = reshaped,
