@@ -1,6 +1,5 @@
 library(tidyverse)
 
-
 source("R/moving-average.R")
 
 bisley1 <- read_csv("data/bisley1.csv")
@@ -27,7 +26,6 @@ bq2_window <- moving_average(cleaned_bis_2)
 bq3_window <- moving_average(cleaned_bis_3)
 prmwindow <- moving_average(cleaned_prm)
 
-
 complete <- bind_rows(bq1_window, bq2_window, bq3_window, prmwindow)
 complete_and_longer <- complete |> 
   pivot_longer(
@@ -35,7 +33,6 @@ complete_and_longer <- complete |>
     names_to = "nutrient", 
     values_to = "concentration"
     )
-
 
 ggplot(
   data = complete_and_longer,
@@ -50,3 +47,5 @@ ggplot(
     scales = "free", 
     ncol = 1
   )
+
+### make a second graph that goes up to this year instead of 1994??
