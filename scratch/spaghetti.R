@@ -151,8 +151,8 @@ for(i in 1:nrow(prm_window)){
 }
 
 
-merged_data <- bind_rows(bis_window_1, bis_window_2, bis_window_3, prm_window)
-reshaped <- merged_data |> 
+complete <- bind_rows(bis_window_1, bis_window_2, bis_window_3, prm_window)
+reshaped <- complete |> 
   pivot_longer(
     cols = c(`NH4-N`, `NO3-N`, K, Ca, Mg),
     names_to = "nutrient", 
