@@ -36,8 +36,7 @@ moving_average <- function(cleaned_data) {
     result$`NO3-N`[i] <- mean(NO3N_window, na.rm = TRUE)
     result$Site[i] <- cleaned_data$Site
   }
-  
+
   # Return the result
   return(result)
 }
-
