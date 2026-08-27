@@ -1,7 +1,7 @@
 ### Automate
-Not Yet.
+Mets Spec.
 
-Data reading and cleaning is handled in a standalone script that creates intermediate outputs (spaghetti.R).  However, my Quarto document currently just contains text, rather than completing analysis and reading intermediate outputs.  All scripts run without errors.
+Data reading and cleaning is handled in a standalone script that creates intermediate outputs. The Quarto document runs by itslef, reads intermediate outputs, and completes analysis. All scripts run without errors.
 
 ### Organize
 Meets Spec
