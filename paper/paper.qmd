@@ -13,6 +13,9 @@ Merge the moving_average output files into one larger data frame.  Pivot to crea
 ### Results
 Plot the new data.
 ```{r}
+#| echo: false
+#| warning: false
+
 library(tidyverse)
 clean_comb_piv <- read_csv("../output/clean_combine_pivot.csv")
 ggplot(
