@@ -2,28 +2,28 @@ library(tidyverse)
 
 source("R/moving-average.R")
 
-bisley1 <- read_csv("data/bisley1.csv")
-bisley2 <- read_csv("data/bisley2.csv")
-bisley3 <- read_csv("data/bisley3.csv")
+bq1 <- read_csv("data/bisley1.csv")
+bq2 <- read_csv("data/bisley2.csv")
+bq3 <- read_csv("data/bisley3.csv")
 prm <- read_csv("data/prm.csv")
 
 #select relevant columns and label by site
-cleaned_bis_1 <- bisley1 |>
-  select(`NH4-N`, `NO3-N`, Sample_Date, K, Ca, Mg) |>
+cleaned_bq1 <- bq1 |>
+  select(Sample_Date, `NH4-N`, `NO3-N`, , K, Ca, Mg) |>
   mutate(Site = "BQ1")
-cleaned_bis_2 <- bisley2 |>
-  select(`NH4-N`, `NO3-N`, Sample_Date, K, Ca, Mg) |>
+cleaned_bq2 <- bq2 |>
+  select(Sample_Date, `NH4-N`, `NO3-N`, K, Ca, Mg) |>
   mutate(Site = "BQ2")
-cleaned_bis_3 <- bisley3 |>
-  select(`NH4-N`, `NO3-N`, Sample_Date, K, Ca, Mg) |>
+cleaned_bq3 <- bq2 |>
+  select(Sample_Date, `NH4-N`, `NO3-N`, Sample_Date, K, Ca, Mg) |>
   mutate(Site = "BQ3")
 cleaned_prm <- prm |>
-  select(`NH4-N`, `NO3-N`, Sample_Date, K, Ca, Mg) |>
+  select(Sample_Date, `NH4-N`, `NO3-N`, K, Ca, Mg) |>
   mutate(Site = "PRM")
 
-bq1_window <- moving_average(cleaned_bis_1)
-bq2_window <- moving_average(cleaned_bis_2)
-bq3_window <- moving_average(cleaned_bis_3)
+bq1_window <- moving_average(cleaned_bq1)
+bq2_window <- moving_average(cleaned_bq2)
+bq3_window <- moving_average(cleaned_bq3)
 prmwindow <- moving_average(cleaned_prm)
 
 
