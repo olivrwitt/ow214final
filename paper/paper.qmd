@@ -1,0 +1,21 @@
+### Background
+
+
+### Data
+Load stream chemistry data from downloaded csv files.
+
+### Methods
+Call the "moving average" function so that we can create moving window averages for the stream chemistry data.
+
+
+Clean the data files by selecting only the relevant columns and adding a "site" column to keep track of sites once the data files are merged.
+
+
+Call the "moving_average" function on each dataset.
+
+
+Merge the moving_average output files into one larger data frame.  Pivot to create "nutrient" and "concentration" columns.
+
+
+### Results
+Plot the new data.
