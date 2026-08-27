@@ -27,12 +27,13 @@ ggplot(
   )
 ) +
   geom_line() +
-  facet_wrap(
+  facet_grid(
     vars(nutrient),
-    scales = "free",
-    ncol = 1
+    scales = "free_y",
+    switch = "y"
   ) +
-  geom_vline(xintercept = ymd("1989-09-17"), linetype = "dashed")
+  geom_vline(xintercept = ymd("1989-09-17"), linetype = "dashed") +
+  labs(x = "Years", y = "Stream Ion Concentration")
 ```
 
 This graph shows nutrient concentrations over time in the four stream sites between 1986 and 1995.  The figure contains one plot for each nutrient (Ca, Mg, K, NH4-N, and NO3-N).  Line types denote different sites.
