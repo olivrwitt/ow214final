@@ -1,7 +1,7 @@
 ### Automate
 Mets Spec.
 
-Data reading and cleaning is handled in a standalone script that creates intermediate outputs. The Quarto document runs by itslef, reads intermediate outputs, and completes analysis. All scripts run without errors.
+Data reading and cleaning is handled in a standalone script that creates intermediate outputs. The Quarto document runs by itself, reads intermediate outputs, and completes analysis. All scripts run without errors.
 
 ### Organize
 Meets Spec

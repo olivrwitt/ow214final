@@ -7,7 +7,6 @@ bisley2 <- read_csv("data/bisley2.csv")
 bisley3 <- read_csv("data/bisley3.csv")
 prm <- read_csv("data/prm.csv")
 
-#select relevant columns and label by site
 cleaned_bis_1 <- bisley1 |>
   select(`NH4-N`, `NO3-N`, Sample_Date, K, Ca, Mg) |>
   mutate(Site = "BQ1")
@@ -26,7 +25,6 @@ bq2_window <- moving_average(cleaned_bis_2)
 bq3_window <- moving_average(cleaned_bis_3)
 prmwindow <- moving_average(cleaned_prm)
 
-
 complete <- bind_rows(bq1_window, bq2_window, bq3_window, prmwindow)
 complete_and_longer <- complete |>
   pivot_longer(
@@ -34,6 +32,5 @@ complete_and_longer <- complete |>
     names_to = "nutrient",
     values_to = "concentration"
   )
-
 
 write_csv(complete_and_longer, "output/clean_combine_pivot.csv")
