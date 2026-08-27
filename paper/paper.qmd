@@ -1,14 +1,13 @@
 ### Background
+This project takes data on nutrient concentrations in several streams in the Luquillo mountain region in Puerto Rico from 1986-1994.  The purpose is to analyze changes over time in these  nutrient concentrations after the 1986 and plot it.
 
 ### Data
+CSV files from [McDowell, William H., and USDA Forest Service. International Institute Of Tropical Forestry (IITF). 2024.](https://doi.org/10.6073/PASTA/F31349BEBDC304F758718F4798D25458).  Downloaded and stored within the repository.
 
 ### Methods
-Call the "moving average" function so that we can create moving window averages for the stream chemistry data.
-
+Create a "moving average" function so that we can create moving window averages for the stream chemistry data.
 Clean the data files by selecting only the relevant columns and adding a "site" column to keep track of sites once the data files are merged.
-
 Call the "moving_average" function on each dataset.
-
 Merge the moving_average output files into one larger data frame.  Pivot to create "nutrient" and "concentration" columns.
 
 ### Results
@@ -23,12 +22,13 @@ ggplot(
     y = concentration,
     linetype = Site
   )
-) + geom_line()+
+) +
+  geom_line() +
   facet_wrap(
-    vars(nutrient), 
-    scales = "free", 
+    vars(nutrient),
+    scales = "free",
     ncol = 1
-  )+
+  ) +
   geom_vline(xintercept = ymd("1989-09-17"), linetype = "dashed")
 ```
 
