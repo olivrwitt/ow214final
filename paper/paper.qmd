@@ -2,9 +2,9 @@
 ![Hurricane Hugo in Puerto Rico](https://gfrmedia-el-nuevo-dia-prod.web.arc-cdn.net/resizer/v2/735ITMGQLRGBLOAS2CK3K6ZOVI.jpg?auth=67858dd50bf2867680e69569f2995e1bbdf60f39717caabfb68da5cc7a4235f9&width=1200&height=717&smart=true&quality=95)
 
 ### Background
-This project takes data on nutrient concentrations in several streams in the Luquillo mountain region in Puerto Rico from 1986-1994.  The purpose is to analyze changes over time in these  nutrient concentrations before and after 1989's hurricane by generating nutrient concentration time-series plots.
+This project takes data on nutrient concentrations in several streams in the Luquillo experimental forest in Puerto Rico between 1988 and 1994.  The purpose is to analyze changes over time in these  nutrient concentrations before and after 1989's hurricane by generating nutrient concentration time-series plots.
 
-We aimed to replicate the analysis of Schaefer, Douglas. A., William H. McDowell, Fredrick N. Scatena, and Clyde E. Asbury. 2000 (figure below)
+Our analysis is based on that of Schaefer, Douglas. A., William H. McDowell, Fredrick N. Scatena, and Clyde E. Asbury. 2000 (figure below)
 ![Original Figure (Schaefer et al)](https://eds-214-reproducibility-m26.github.io/course-materials/interactive/images/Schaefer_etal_2020_fig3.png)
 
 
@@ -13,7 +13,7 @@ CSV files from: [McDowell, William H., and USDA Forest Service. International In
 Data downloaded and stored locally within the repository.
 
 ### Methods
-We created a "moving average" function in order to calculate averages for the existing stream ion concentration data over 9-week windows, focusing specifically on the data for K, Ca, Mg, NH4-N, and NO3-N.  These average values were merged into a larger dataset which was then plotted on year vs ion concentration axes, sorted by ion.
+Stream ion concentration readings were continously collected in the Luquillo forest between 1988 and 1994.  We downloaded this data and created a "moving average" function in order to calculate averages for the existing stream ion concentration data over 9-week windows.  Focusing specifically on the data for K, Ca, Mg, NH4-N, and NO3-N, these average values were merged into a larger dataset which was then plotted on year vs ion concentration axes, sorted by ion.
 
 ### Results
 ```{r}
@@ -38,7 +38,7 @@ ggplot(
     vars(factor(
       nutrient,
       levels = c('K', 'NO3-N', 'Mg', 'Ca', 'NH4-N'),
-      labels = c('K', 'NO3-N', 'Mg', 'Ca', 'NH4-N')
+      labels = c('K mg L', 'NO3-N ug L', 'Mg mg L', 'Ca mg L', 'NH4-N ug L')
     )),
     scales = "free_y",
     switch = "y",
@@ -52,4 +52,4 @@ ggplot(
   )
 ```
 
-This graph shows nutrient concentrations over time in the four stream sites between 1986 and 1995.  The figure contains one plot for each nutrient (Ca, Mg, K, NH4-N, and NO3-N).  Line types denote different sites.  The vertical dashed line in late 1989 repesents the timing of hurricane Hugo.
+This graph shows nutrient concentrations over time in the four stream sites between 1986 and 1995.  The figure contains one plot for each nutrient (Ca, Mg, K, NH4-N, and NO3-N).  Line types denote different sites.  The vertical dashed line in late 1989 repesents the timing of hurricane Hugo.  With the exception of NH4-N, ion concentrations appear to increase significantly after 1989's hurricane across all stream sites.

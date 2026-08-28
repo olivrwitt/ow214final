@@ -1,7 +1,7 @@
 moving_average <- function(cleaned_data) {
   result <- tibble(
     #set up 9 week windows and empty data frame
-    window_start = seq(ymd("1986-05-20"), ymd("1994-12-30"), by = "9 weeks"),
+    window_start = seq(ymd("1988-01-01"), ymd("1994-12-30"), by = "9 weeks"),
     Site = NA,
     `NH4-N` = NA,
     `NO3-N` = NA,
