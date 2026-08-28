@@ -1,7 +1,7 @@
 # Water quality changes in Puerto Rico before and after Hurricane Hugo
 
 ## Purpose/Background
-This repository contains data on nutrient concentrations in several streams in the Luquillo mountain region in Puerto Rico from 1986-1994.  The purpose is to analyze changes over time in these  nutrient concentrations before and after the 1989 hurricane (Hurricane Hugo).
+This repository contains data on nutrient concentrations in several streams in the Luquillo mountain region in Puerto Rico from 1986-1994 as well as R scripts to analyze this data and create plots and summary statistics.  The purpose is to analyze changes over time in these  nutrient concentrations before and after the 1989 hurricane (Hurricane Hugo).
 
 ## Contents
 The "data" folder contains stream chemistry data stored as csv files corresponding to stream locations:
@@ -21,7 +21,7 @@ The R script in the "paper.qmd" document creates a figure displaying concentrati
 ## Details regarding data access
 Data from: [McDowell, William H., and USDA Forest Service. International Institute Of Tropical Forestry (IITF). 2024.](https://doi.org/10.6073/PASTA/F31349BEBDC304F758718F4798D25458)
 
-Data is stored locally in the repository
+Data files are stored locally in the repository
 
 ## Authors/contributors
 Oliver Witt
