@@ -5,7 +5,8 @@
 This project takes data on nutrient concentrations in several streams in the Luquillo experimental forest in Puerto Rico between 1988 and 1994.  The purpose is to analyze changes over time in these  nutrient concentrations before and after 1989's hurricane by generating nutrient concentration time-series plots.
 
 Our analysis is based on that of Schaefer, Douglas. A., William H. McDowell, Fredrick N. Scatena, and Clyde E. Asbury. 2000 (figure below)
-![Original Figure (Schaefer et al)](https://eds-214-reproducibility-m26.github.io/course-materials/interactive/images/Schaefer_etal_2020_fig3.png)
+
+![Original Figure (Schaefer et al)](https://eds-214-reproducibility-m26.github.io/course-materials/interactive/images/Schaefer_etal_2020_fig3.png){width=400}
 
 
 ### Data
@@ -13,7 +14,11 @@ CSV files from: [McDowell, William H., and USDA Forest Service. International In
 Data downloaded and stored locally within the repository.
 
 ### Methods
-Stream ion concentration readings were continously collected in the Luquillo forest between 1988 and 1994.  We downloaded this data and created a "moving average" function in order to calculate averages for the existing stream ion concentration data over 9-week windows.  Focusing specifically on the data for K, Ca, Mg, NH4-N, and NO3-N, these average values were merged into a larger dataset which was then plotted on year vs ion concentration axes, sorted by ion.
+Stream ion concentration readings were continously collected in the Luquillo forest between 1988 and 1994.  We downloaded data for four specific stream sites: BQ1, BQ2, BQ3, PRM (see below):
+
+![Stream site locations](Schaefer_fig_1.png){width=600}
+
+We then created a "moving average" function in order to calculate averages for the existing stream ion concentration data over 9-week windows.  Focusing specifically on the data for K, Ca, Mg, NH4-N, and NO3-N, these average values were merged into a larger dataset which was then plotted on year vs ion concentration axes, sorted by ion.
 
 ### Results
 ```{r}
@@ -46,7 +51,7 @@ ggplot(
   #add line representing when the hurricane was
   geom_vline(xintercept = ymd("1989-09-17"), linetype = "dashed") +
   labs(
-    title = "Stream Ion Concentrations in Luquillo, Puerto Rico by Year",
+    title = "Stream Ion Concentrations in Luquillo, Puerto Rico From 1988 to 1994",
     x = "Years",
     y = "Stream Ion Concentration"
   )

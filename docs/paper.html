@@ -60,8 +60,14 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="background" class="level3">
 <h3 class="anchored" data-anchor-id="background">Background</h3>
-<p>This project takes data on nutrient concentrations in several streams in the Luquillo mountain region in Puerto Rico from 1986-1994. The purpose is to analyze changes over time in these nutrient concentrations before and after 1989’s hurricane by generating nutrient concentration time-series plots.</p>
-<p>We aimed to replicate the analysis of Schaefer, Douglas. A., William H. McDowell, Fredrick N. Scatena, and Clyde E. Asbury. 2000 (figure below) <img src="https://eds-214-reproducibility-m26.github.io/course-materials/interactive/images/Schaefer_etal_2020_fig3.png" class="img-fluid" alt="Original Figure (Schaefer et al)"></p>
+<p>This project takes data on nutrient concentrations in several streams in the Luquillo experimental forest in Puerto Rico between 1988 and 1994. The purpose is to analyze changes over time in these nutrient concentrations before and after 1989’s hurricane by generating nutrient concentration time-series plots.</p>
+<p>Our analysis is based on that of Schaefer, Douglas. A., William H. McDowell, Fredrick N. Scatena, and Clyde E. Asbury. 2000 (figure below)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://eds-214-reproducibility-m26.github.io/course-materials/interactive/images/Schaefer_etal_2020_fig3.png" class="img-fluid figure-img" width="400"></p>
+<figcaption>Original Figure (Schaefer et al)</figcaption>
+</figure>
+</div>
 </section>
 <section id="data" class="level3">
 <h3 class="anchored" data-anchor-id="data">Data</h3>
@@ -70,7 +76,14 @@ Data downloaded and stored locally within the repository.</p>
 </section>
 <section id="methods" class="level3">
 <h3 class="anchored" data-anchor-id="methods">Methods</h3>
-<p>We created a “moving average” function in order to calculate averages for the existing stream ion concentration data over 9-week windows, focusing specifically on the data for K, Ca, Mg, NH4-N, and NO3-N. These average values were merged into a larger dataset which was then plotted on year vs ion concentration axes, sorted by ion.</p>
+<p>Stream ion concentration readings were continously collected in the Luquillo forest between 1988 and 1994. We downloaded data for four specific stream sites: BQ1, BQ2, BQ3, PRM (see below):</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="Schaefer_fig_1.png" class="img-fluid figure-img" width="600"></p>
+<figcaption>Stream site locations</figcaption>
+</figure>
+</div>
+<p>We then created a “moving average” function in order to calculate averages for the existing stream ion concentration data over 9-week windows. Focusing specifically on the data for K, Ca, Mg, NH4-N, and NO3-N, these average values were merged into a larger dataset which was then plotted on year vs ion concentration axes, sorted by ion.</p>
 </section>
 <section id="results" class="level3">
 <h3 class="anchored" data-anchor-id="results">Results</h3>
@@ -83,7 +96,7 @@ Data downloaded and stored locally within the repository.</p>
 </div>
 </div>
 </div>
-<p>This graph shows nutrient concentrations over time in the four stream sites between 1986 and 1995. The figure contains one plot for each nutrient (Ca, Mg, K, NH4-N, and NO3-N). Line types denote different sites. The vertical dashed line in late 1989 repesents the timing of hurricane Hugo.</p>
+<p>This graph shows nutrient concentrations over time in the four stream sites between 1986 and 1995. The figure contains one plot for each nutrient (Ca, Mg, K, NH4-N, and NO3-N). Line types denote different sites. The vertical dashed line in late 1989 repesents the timing of hurricane Hugo. With the exception of NH4-N, ion concentrations appear to increase significantly after 1989’s hurricane across all stream sites.</p>
 </section>
 </section>
 
