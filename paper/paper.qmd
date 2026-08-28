@@ -1,5 +1,6 @@
+## Stream chemistry changes in Puerto Rico before and after Hurricane Hugo
 ### Background
-This project takes data on nutrient concentrations in several streams in the Luquillo mountain region in Puerto Rico from 1986-1994.  The purpose is to analyze changes over time in these  nutrient concentrations before and after 1989's hurricane and plot it.
+This project takes data on nutrient concentrations in several streams in the Luquillo mountain region in Puerto Rico from 1986-1994.  The purpose is to analyze changes over time in these  nutrient concentrations before and after 1989's hurricane by generating nutrient concentration time-series plots.
 
 ### Data
 CSV files from: [McDowell, William H., and USDA Forest Service. International Institute Of Tropical Forestry (IITF). 2024.](https://doi.org/10.6073/PASTA/F31349BEBDC304F758718F4798D25458).  
@@ -23,12 +24,18 @@ ggplot(
     linetype = Site
   )
 ) +
+  theme_bw() +
   geom_line() +
-  #combine all plots in one with labels on side
+  #combine all plots in one with labels on side using facet_grid
   facet_grid(
-    vars(nutrient),
+    #create factor to put facets in correct order
+    vars(factor(
+      nutrient,
+      levels = c('K', 'NO3-N', 'Mg', 'Ca', 'NH4-N'),
+      labels = c('K', 'NO3-N', 'Mg', 'Ca', 'NH4-N')
+    )),
     scales = "free_y",
-    switch = "y"
+    switch = "y",
   ) +
   #add line representing when the hurricane was
   geom_vline(xintercept = ymd("1989-09-17"), linetype = "dashed") +

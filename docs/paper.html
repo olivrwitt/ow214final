@@ -50,18 +50,20 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<section id="stream-chemistry-changes-in-puerto-rico-before-and-after-hurricane-hugo" class="level2">
+<h2 class="anchored" data-anchor-id="stream-chemistry-changes-in-puerto-rico-before-and-after-hurricane-hugo">Stream chemistry changes in Puerto Rico before and after Hurricane Hugo</h2>
 <section id="background" class="level3">
 <h3 class="anchored" data-anchor-id="background">Background</h3>
-<p>This project takes data on nutrient concentrations in several streams in the Luquillo mountain region in Puerto Rico from 1986-1994. The purpose is to analyze changes over time in these nutrient concentrations before and after 1989’s hurricane and plot it.</p>
+<p>This project takes data on nutrient concentrations in several streams in the Luquillo mountain region in Puerto Rico from 1986-1994. The purpose is to analyze changes over time in these nutrient concentrations before and after 1989’s hurricane by generating nutrient concentration time-series plots.</p>
 </section>
 <section id="data" class="level3">
 <h3 class="anchored" data-anchor-id="data">Data</h3>
 <p>CSV files from: <a href="https://doi.org/10.6073/PASTA/F31349BEBDC304F758718F4798D25458">McDowell, William H., and USDA Forest Service. International Institute Of Tropical Forestry (IITF). 2024.</a>.<br>
-Data downloaded and stored within the repository.</p>
+Data downloaded and stored locally within the repository.</p>
 </section>
 <section id="methods" class="level3">
 <h3 class="anchored" data-anchor-id="methods">Methods</h3>
-<p>Create a “moving average” function so that we can create moving window averages for the stream chemistry data. Clean the data files by selecting only the relevant columns and adding a “site” column to keep track of sites once the data files are merged. Call the “moving_average” function on each dataset. Merge the moving_average output files into one larger data frame. Pivot to create “nutrient” and “concentration” columns.</p>
+<p>We created a “moving average” function in order to calculate averages for stream ion concentrations in 9-week windows, focusing specifically on the data for K, Ca, Mg, NH4-N, and NO3-N. These average values were merged into a larger dataset which was then plotted on year vs ion concentration axes, sorted by ion.</p>
 </section>
 <section id="results" class="level3">
 <h3 class="anchored" data-anchor-id="results">Results</h3>
@@ -74,7 +76,8 @@ Data downloaded and stored within the repository.</p>
 </div>
 </div>
 </div>
-<p>This graph shows nutrient concentrations over time in the four stream sites between 1986 and 1995. The figure contains one plot for each nutrient (Ca, Mg, K, NH4-N, and NO3-N). Line types denote different sites. The vertical dashed line in late 1989 repesents the timing of hurricane hugo.</p>
+<p>This graph shows nutrient concentrations over time in the four stream sites between 1986 and 1995. The figure contains one plot for each nutrient (Ca, Mg, K, NH4-N, and NO3-N). Line types denote different sites. The vertical dashed line in late 1989 repesents the timing of hurricane Hugo.</p>
+</section>
 </section>
 
 </main>
