@@ -16,7 +16,7 @@ Data downloaded and stored locally within the repository.
 ### Methods
 Stream ion concentration readings were continously collected in the Luquillo forest between 1988 and 1994.  We downloaded data for four specific stream sites: BQ1, BQ2, BQ3, PRM (see below):
 
-![Stream site locations](Schaefer_fig_1.png){width=600}
+![Stream site locations (Schaefer et al)](Schaefer_fig_1.png){width=600}
 
 We then created a "moving average" function in order to calculate averages for the existing stream ion concentration data over 9-week windows.  Focusing specifically on the data for K, Ca, Mg, NH4-N, and NO3-N, these average values were merged into a larger dataset which was then plotted on year vs ion concentration axes, sorted by ion.
 
