@@ -8,7 +8,7 @@ CSV files from: [McDowell, William H., and USDA Forest Service. International In
 Data downloaded and stored locally within the repository.
 
 ### Methods
-We created a "moving average" function in order to calculate averages for stream ion concentrations in 9-week windows, focusing specifically on the data for K, Ca, Mg, NH4-N, and NO3-N.  These average values were merged into a larger dataset which was then plotted on year vs ion concentration axes, sorted by ion.
+We created a "moving average" function in order to calculate averages for the existing stream ion concentration data over 9-week windows, focusing specifically on the data for K, Ca, Mg, NH4-N, and NO3-N.  These average values were merged into a larger dataset which was then plotted on year vs ion concentration axes, sorted by ion.
 
 ### Results
 ```{r}
