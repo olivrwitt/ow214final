@@ -1,5 +1,5 @@
 ## Stream chemistry changes in Puerto Rico before and after Hurricane Hugo
-![Hurricane Hugo in Puerto Rico](https://gfrmedia-el-nuevo-dia-prod.web.arc-cdn.net/resizer/v2/735ITMGQLRGBLOAS2CK3K6ZOVI.jpg?auth=67858dd50bf2867680e69569f2995e1bbdf60f39717caabfb68da5cc7a4235f9&width=1200&height=717&smart=true&quality=95)
+![Hurricane Hugo in Puerto Rico, 1989](https://gfrmedia-el-nuevo-dia-prod.web.arc-cdn.net/resizer/v2/735ITMGQLRGBLOAS2CK3K6ZOVI.jpg?auth=67858dd50bf2867680e69569f2995e1bbdf60f39717caabfb68da5cc7a4235f9&width=1200&height=717&smart=true&quality=95)
 
 ### Background
 This project takes data on nutrient concentrations in several streams in the Luquillo experimental forest in Puerto Rico between 1988 and 1994.  The purpose is to analyze changes over time in these  nutrient concentrations before and after 1989's hurricane by generating nutrient concentration time-series plots.
@@ -10,7 +10,7 @@ Our analysis is based on that of Schaefer, Douglas. A., William H. McDowell, Fre
 
 
 ### Data
-CSV files from: [McDowell, William H., and USDA Forest Service. International Institute Of Tropical Forestry (IITF). 2024.](https://doi.org/10.6073/PASTA/F31349BEBDC304F758718F4798D25458).  
+CSV files from the Environmental Data Initiative and [McDowell, William H., and USDA Forest Service. International Institute Of Tropical Forestry (IITF). 2024.](https://doi.org/10.6073/PASTA/F31349BEBDC304F758718F4798D25458).  
 Data downloaded and stored locally within the repository.
 
 ### Methods
@@ -52,7 +52,7 @@ ggplot(
   geom_vline(xintercept = ymd("1989-09-17"), linetype = "dashed") +
   labs(
     title = "Stream Ion Concentrations in Luquillo, Puerto Rico From 1988 to 1994",
-    x = "Years",
+    x = "Year",
     y = "Stream Ion Concentration"
   )
 ```
