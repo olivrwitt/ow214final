@@ -1,8 +1,9 @@
 ### Background
-This project takes data on nutrient concentrations in several streams in the Luquillo mountain region in Puerto Rico from 1986-1994.  The purpose is to analyze changes over time in these  nutrient concentrations after the 1986 and plot it.
+This project takes data on nutrient concentrations in several streams in the Luquillo mountain region in Puerto Rico from 1986-1994.  The purpose is to analyze changes over time in these  nutrient concentrations before and after 1989's hurricane and plot it.
 
 ### Data
-CSV files from [McDowell, William H., and USDA Forest Service. International Institute Of Tropical Forestry (IITF). 2024.](https://doi.org/10.6073/PASTA/F31349BEBDC304F758718F4798D25458).  Downloaded and stored within the repository.
+CSV files from: [McDowell, William H., and USDA Forest Service. International Institute Of Tropical Forestry (IITF). 2024.](https://doi.org/10.6073/PASTA/F31349BEBDC304F758718F4798D25458).  
+Data downloaded and stored locally within the repository.
 
 ### Methods
 Create a "moving average" function so that we can create moving window averages for the stream chemistry data.
@@ -11,7 +12,6 @@ Call the "moving_average" function on each dataset.
 Merge the moving_average output files into one larger data frame.  Pivot to create "nutrient" and "concentration" columns.
 
 ### Results
-Plot the new data.
 ```{r}
 #| echo: false
 #| warning: false
@@ -27,13 +27,15 @@ ggplot(
   )
 ) +
   geom_line() +
+  #combine all plots in one with labels on side
   facet_grid(
     vars(nutrient),
     scales = "free_y",
     switch = "y"
   ) +
+  #add line representing when the hurricane was
   geom_vline(xintercept = ymd("1989-09-17"), linetype = "dashed") +
   labs(x = "Years", y = "Stream Ion Concentration")
 ```
 
-This graph shows nutrient concentrations over time in the four stream sites between 1986 and 1995.  The figure contains one plot for each nutrient (Ca, Mg, K, NH4-N, and NO3-N).  Line types denote different sites.
+This graph shows nutrient concentrations over time in the four stream sites between 1986 and 1995.  The figure contains one plot for each nutrient (Ca, Mg, K, NH4-N, and NO3-N).  Line types denote different sites.  The vertical dashed line in late 1989 repesents the timing of hurricane Hugo.
